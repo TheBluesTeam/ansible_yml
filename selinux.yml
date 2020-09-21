@@ -1,0 +1,6 @@
+- name: disable selinux
+  hosts: all
+  become: true
+  tasks:
+    - name: disable selinx off
+      shell: setenforce 1
