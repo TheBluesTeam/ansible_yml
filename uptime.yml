@@ -1,0 +1,9 @@
+- name: memory check
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: runtime
+    shell: uptime
+    register: uptime
+  - name: show uptime
+    debug: var=uptime
