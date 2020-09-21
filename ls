@@ -1,0 +1,6 @@
+- hosts: localhost
+  tasks:
+    - shell: ls
+      register: shell_result
+    - debug:
+      var: shell_result.stdout_lines
