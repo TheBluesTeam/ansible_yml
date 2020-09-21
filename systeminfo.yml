@@ -1,0 +1,15 @@
+- name: memory info
+  hosts: all
+  become: true
+  tasks:
+    - name: memroy infor
+      shell: 
+        cmd: free -h
+      register: result
+    - debug: var=result
+
+    - name: Fdisk
+      shell:
+        cmd: df -h
+      register: disk
+    - debug: var=disk
