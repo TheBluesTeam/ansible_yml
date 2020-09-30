@@ -1,0 +1,8 @@
+- name: system health
+  hosts: all
+  become: true
+  tasks:
+    - name: Server Health
+      script: ./info.sh
+      register: shell_result
+    - debug: var=shell_result.stdout_lines
