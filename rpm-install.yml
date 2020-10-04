@@ -1,0 +1,12 @@
+- name: rpm-install
+  hosts: all
+  become: true
+  tasks:
+    - name: install ssacli
+      yun:
+        name: /tmp/ssacli-2.65-7.0.i386.rpm
+        state: present
+
+  
+  
+  
