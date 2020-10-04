@@ -8,8 +8,7 @@
        owner: root
        group: root
        mode: 0644
-       
+       register: resul
        
     - name: Read /tmp/123.txt
-      register: result
       debug: var=result
