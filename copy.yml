@@ -1,0 +1,15 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: copy file from ansible node to test node
+      copy:
+       src: /ssacli-2.65-7.0.i386.rpm
+       dest: /tmp/ssacli-2.65-7.0.i386.rpm
+       owner: root
+       group: root
+       mode: 0644
+       
+       
+    - name: Read /tmp/123.txt
+      register: result
+      debug: var=result
