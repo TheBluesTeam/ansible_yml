@@ -6,6 +6,9 @@
     copy:
       src: /ssacli-2.65-7.0.i386.rpm
       dest: /tmp/ssacli-2.65-7.0.i386.rpm
+      owner: root
+      group: root
+      mode: 0644
   - name: ssacli-install
     yum:
       name: /tmp/ssacli-2.65-7.0.i386.rpm
