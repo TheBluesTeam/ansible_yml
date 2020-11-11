@@ -1,0 +1,8 @@
+- name: get file  
+  hosts: all
+  become: true
+  tasks:
+    - name: Get the file to client
+      fetch:
+        src: /client-file
+        dest: /ansible_yml/
