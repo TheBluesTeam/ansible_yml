@@ -1,0 +1,10 @@
+
+- host: all
+  tasks:
+    - name: config file modify
+      replace:
+        path: /ansibletest/ntp.conf
+        regexp: "sshopen=yes"
+        replace: "sshopen=no"
+        
+  
