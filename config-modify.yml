@@ -1,5 +1,6 @@
-
-- host: all
+- name: ntpconf modify
+  hosts: all
+  become: true
   tasks:
     - name: config file modify
       replace:
