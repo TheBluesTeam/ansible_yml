@@ -28,3 +28,13 @@
         state: started
 
 
+
+//  - name: Ansible replace multiple words example
+      replace:
+        path: /Users/mdtutorials2/Documents/Ansible/intext.txt
+        regexp: "{{ item }}"
+        replace: "dog"
+      with_items:
+      - 'cat'
+      - 'tiger'
+      - 'lion'
