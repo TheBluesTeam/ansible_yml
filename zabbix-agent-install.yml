@@ -45,5 +45,33 @@
       line: 'HostMetadataItem=system.uname'
       become: true
       
-      
+//    - lineinfile:
+      path: /etc/zabbix/zabbix_agentd.conf
+      regexp: '^Server=127.0.0.1'
+      line: 'Server={{ zabbix_server }}'
+    become: true
+
+  - lineinfile:
+      path: /etc/zabbix/zabbix_agentd.conf
+      regexp: '^ServerActive=127.0.0.1'
+      line: 'ServerActive={{ zabbix_server }}'
+    become: true
+
+  - lineinfile:
+      path: /etc/zabbix/zabbix_agentd.conf
+      regexp: '^Hostname=Zabbix server'
+      line: '#Hostname='
+    become: true
+
+  - lineinfile:
+      path: /etc/zabbix/zabbix_agentd.conf
+      regexp: '^# HostMetadata='
+      line: 'HostMetadata=Linux'
+    become: true
+
+  - lineinfile:
+      path: /etc/zabbix/zabbix_agentd.conf
+      regexp: '^# HostMetadataItem='
+      line: 'HostMetadataItem=system.uname'
+    become: true
       
