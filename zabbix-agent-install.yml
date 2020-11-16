@@ -74,4 +74,15 @@
       regexp: '^# HostMetadataItem='
       line: 'HostMetadataItem=system.uname'
     become: true
+    
+    
+    
+    // - name: elasticsearch config modify
+         lineinfile:
+            path: /etc/~~~
+            regexp: '{{ item.from }}'
+            line: '{{ item.to }}'
+         with_items:
+          - { from: '#network.host: 192.168.0.1', to: 'network.host:0.0.0.0'}
+          - { from: '#http.port:9200', to: 'http.port: 9200'}
       
