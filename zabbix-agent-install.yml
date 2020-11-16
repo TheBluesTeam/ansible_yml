@@ -38,3 +38,12 @@
       - 'cat'
       - 'tiger'
       - 'lion'
+     
+ //  - lineinfile:
+      path: /etc/zabbix/zabbix_agentd.conf
+      regexp: '^# HostMetadataItem='
+      line: 'HostMetadataItem=system.uname'
+      become: true
+      
+      
+      
