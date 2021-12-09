@@ -1,0 +1,10 @@
+- name: disable selinux
+  hosts: all
+  become: true
+  tasks:
+    - name: disable selinx off
+      shell: setenforce 1
+
+    - name: firewalld off
+      shell: systemctl stop firewalld && systemctl status firewalld
+  
